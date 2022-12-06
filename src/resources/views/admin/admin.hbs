@@ -1,0 +1,95 @@
+
+
+<div class="mt-4">
+    <div class="container">
+      <div>
+          <a href="/admin/stored/courses" class="admin-title">Danh sách khóa học</a>
+        </div>
+      
+      <table class="table mt-4">
+          <thead>
+              <tr>
+                  <th scope="col">STT</th>
+                  <th scope="col">Tên khóa học</th>
+                  <th scope="col">Trình độ</th>
+                  <th scope="col" colspan="2">Thời gian xóa</th>
+              </tr>
+          </thead>
+          <tbody>
+              {{#each courses}}
+              <tr>
+                  <th scope="row">{{sum @index 1}}</th>
+                  <td>{{this.title}}</td>
+                  <td>{{this.level}}</td>
+                  <td>{{this.date}}</td>
+
+                  <td>
+                      <a href="courses/{{this._id}}/edit" class="btn btn-link btn-restore" data-id="{{this._id}}">Thay đổi</a>
+                      <a href="courses/{{this._id}}/update" class="btn btn-link" data-bs-toggle="modal" data-bs-id="{{this._id}}" data-bs-target="#btn-remove">Xóa</a>
+                  </td>
+              </tr>
+              {{else}}
+              <tr>
+                <td colspan="5" class="text-center">
+                  Thùng rác trống.
+                  <a href="">Danh sách khóa học</a>
+                </td>
+              </tr>
+              {{/each}}
+          </tbody>
+      </table>
+    </div>
+
+</div>
+
+
+
+
+<div  id = "btn-remove" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xoá khoá học?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn chắc chắn muốn xoá?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" id = "btn-danger" >Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+ <form method="post" name = "delete-form"></form>
+
+<script>
+
+    let id_course
+    const exampleModal = document.getElementById('btn-remove')
+    exampleModal.addEventListener('show.bs.modal', event => {
+        const button = event.relatedTarget
+        id_course = button.getAttribute('data-bs-id')
+        console.log(id_course)
+    })
+
+    let remove = document.getElementById('btn-danger')
+    console.log(remove)
+    const delete_form = document.forms['delete-form']
+    remove.onclick= () =>{
+
+        delete_form.action = 'courses/'+id_course + '/remove?_method=DELETE'
+        delete_form.submit()
+    }
+
+
+
+</script>
+
+
+

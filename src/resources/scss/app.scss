@@ -1,6 +1,69 @@
 @import './variable';
 
-h1{
-    margin: 0;
-    color: var(--red);
+
+.user-avatar{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+
+}
+
+ 
+.nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.navbar-collapse{
+    flex-grow: 0;
+}
+
+/// Home
+.card-img{
+    margin-top: 10px;
+}
+
+/// showDetail
+.btn-studyNow{
+    border-radius: 999999px;
+    display: flex;
+    border: transparent ;
+    padding: 10px;
+    font-size: 16px;
+    &:hover{
+        background-color: #ccc;
+        border: #ccc solid ;
+
+    }
+}
+.title-course{
+    margin-top: 20px;
+    list-style-type: disc;
+    li{
+        margin: 10px;
+    }
+}
+
+.detailCourse{
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+
+  
+}
+/// list courses
+.admin-title{
+    text-decoration: none;
+    color: #000;
+    font-size: 40px;
+}
+
+
+// My courses
+.btn{
+    text-decoration: none;
+    margin-left: 10px;
 }

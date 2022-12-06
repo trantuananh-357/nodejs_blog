@@ -1,0 +1,25 @@
+
+
+
+<div class="container">
+        <div class="detailCourse">
+            <div class="">
+                <h2>Chi tiết</h2>
+                <ul class="title-course">
+                    <li>{{course.title}}</li>
+                    <li>Mức độ: {{course.level}}</li>
+
+                    <li>Ngày Tạo: {{course.date}}</li>
+
+
+                </ul>
+            </div>
+    
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{course.videoId}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>{{course.description}}</p>
+                <button class="btn-studyNow">HỌC NGAY</button>
+
+            </div>
+        </div>
+</div>

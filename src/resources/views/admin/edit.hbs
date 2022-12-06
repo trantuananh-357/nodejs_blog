@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="mt-4 ">
+        <h3>Đăng kí khoá học </h3>
+       <div class="">
+         <form method="post" action="/admin/stored/courses/{{course._id}}/update?_method=PUT">
+            <div class="mb-3">
+                <label for="name" class="form-label">Tên khoá học</label>
+                <input type="text" class="form-control" id="name" value="{{course.name}}" name="name">
+            </div>
+           <div class="mb-3">
+                <label for="decription" class="form-label">Chi tiết khoá học</label>
+                <input type="text" class="form-control" id="decription" value="{{course.decription}}" name="decription">
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-label">Tác giả</label>
+                <input type="text" class="form-control" id="author" value= "{{course.author}}" name="author">
+            </div>
+             <div class="mb-3">
+                <label for="videoId" class="form-label">VideoId</label>
+                <input type="text" class="form-control" id="videoId" value= "{{course.videoId}}" name="videoId">
+            </div>
+            <button type="submit" class="btn btn-primary">Lưu lại</button>
+            
+       
+            
+            </form>
+       </div>
+    </div>
+</div>
